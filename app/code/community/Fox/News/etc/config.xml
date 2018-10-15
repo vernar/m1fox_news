@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Fox_News>
+            <version>1.0.0</version>
+        </Fox_News>
+    </modules>
+    <frontend>
+        <routers>
+            <news>
+                <use>standard</use>
+                <args>
+                    <module>Fox_News</module>
+                    <frontName>news</frontName>
+                </args>
+            </news>
+        </routers>
+        <translate>
+            <modules>
+                <Fox_News>
+                    <files>
+                        <default>Fox_News.csv</default>
+                    </files>
+                </Fox_News>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <Fox>
+                    <file>fox_news.xml</file>
+                </Fox>
+            </updates>
+        </layout>
+
+    </frontend>
+
+    <adminhtml>
+        <!--<layout>-->
+            <!--<updates>-->
+                <!--<news>-->
+                    <!--<file>news.xml</file>-->
+                <!--</news>-->
+            <!--</updates>-->
+        <!--</layout>-->
+
+
+
+    </adminhtml>
+
+    <global>
+        <resources>
+            <fox_news_setup>
+                <setup>
+                    <module>Fox_News</module>
+                </setup>
+            </fox_news_setup>
+            <fox_news_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </fox_news_write>
+            <fox_news_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </fox_news_read>
+        </resources>
+        <models>
+            <news>
+                <class>Fox_News_Model</class>
+                <resourceModel>news_resource</resourceModel>
+            </news>
+            <news_resource>
+                <class>Fox_News_Model_Resource</class>
+                <entities>
+                    <news>
+                        <table>fox_news</table>
+                    </news>
+                    <news_items>
+                        <table>fox_news_items</table>
+                    </news_items>
+                </entities>
+            </news_resource>
+        </models>
+        <blocks>
+            <news>
+                <class>Fox_News_Block</class>
+            </news>
+        </blocks>
+
+        <helpers>
+            <news>
+                <class>Fox_News_Helper</class>
+            </news>
+        </helpers>
+    </global>
+</config>
