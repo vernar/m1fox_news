@@ -33,20 +33,6 @@
         </layout>
 
     </frontend>
-
-    <adminhtml>
-        <!--<layout>-->
-            <!--<updates>-->
-                <!--<news>-->
-                    <!--<file>news.xml</file>-->
-                <!--</news>-->
-            <!--</updates>-->
-        <!--</layout>-->
-
-
-
-    </adminhtml>
-
     <global>
         <resources>
             <fox_news_setup>
