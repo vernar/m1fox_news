@@ -33,6 +33,17 @@
         </layout>
 
     </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <foxnews after="Mage_Adminhtml">Fox_News_Adminhtml</foxnews>
+                    </modules>
+                </args>
+             </adminhtml>
+        </routers>
+    </admin>
     <global>
         <resources>
             <fox_news_setup>
