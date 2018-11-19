@@ -24,7 +24,7 @@ class Fox_News_Block_Adminhtml_Foxnews_Edit_Form extends Mage_Adminhtml_Block_Wi
     /**
      * Prepare form before rendering HTML
      *
-     * @return Fox_News_Block_Adminhtml_Foxnews_Edit_Form
+     * @return Mage_Adminhtml_Block_Widget_Form
      */
     protected function _prepareForm()
     {

@@ -11,9 +11,8 @@ class Fox_News_Block_Adminhtml_Foxnews_Grid extends Mage_Adminhtml_Block_Widget_
 
     protected function _prepareCollection()
     {
-
-        $collection = Mage::getModel('news/newslist')->getCollection();
         /* @var $collection Fox_News_Model_Mysql4_Newslist_Collection */
+        $collection = Mage::getModel('news/newslist')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }

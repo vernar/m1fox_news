@@ -22,7 +22,7 @@ class Fox_News_Model_Resource_Newslist extends Mage_Core_Model_Resource_Db_Abstr
     /**
      * Get store ids to which specified item is assigned
      *
-     * @param int $id
+     * @param int $newsId
      * @return array
      */
     public function lookupStoreIds($newsId)
@@ -39,7 +39,7 @@ class Fox_News_Model_Resource_Newslist extends Mage_Core_Model_Resource_Db_Abstr
     /**
      * Get status to which specified item is assigned
      *
-     * @param int $id
+     * @param int $newsId
      * @return array
      */
     public function lookupStatusId($newsId)
@@ -58,7 +58,7 @@ class Fox_News_Model_Resource_Newslist extends Mage_Core_Model_Resource_Db_Abstr
      * Assign page to store views
      *
      * @param Mage_Core_Model_Abstract $object
-     * @return Fox_News_Model_Resource_Newslist
+     * @return Mage_Core_Model_Resource_Db_Abstract
      */
     protected function _afterSave(Mage_Core_Model_Abstract $object)
     {

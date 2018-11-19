@@ -34,8 +34,7 @@ class Fox_News_Model_Resource_Newslist_Collection extends Mage_Core_Model_Resour
      * @param bool $withAdmin
      * @return Fox_News_Model_Resource_Newslist_Collection
      */
-    public function addStatusFilter($status, $withAdmin = true)
-    {
+    public function addStatusFilter($status, $withAdmin = true) {
          $this->getSelect()
                 ->join(
                     array('items_table' => $this->getTable('newslist_items')),
@@ -51,15 +50,15 @@ class Fox_News_Model_Resource_Newslist_Collection extends Mage_Core_Model_Resour
      *
      * @return Fox_News_Model_Resource_Newslist_Collection
      */
-    public function getFilteredData(){
-                 $this->getSelect()
-                     ->join(
-                        array('items_table' => $this->getTable('newslist_items')),
-                        'main_table.id = items_table.news_item_id',
-                        array())
-                     ->where('items_table.status = ?', Fox_News_Model_Newslist::STATUS_ENABLE)
-                     ->where('items_table.store_id = ?', Mage::app()->getStore()->getStoreId())
-                     ->distinct();
+    public function getFilteredData() {
+         $this->getSelect()
+             ->join(
+                array('items_table' => $this->getTable('newslist_items')),
+                'main_table.id = items_table.news_item_id',
+                array())
+             ->where('items_table.status = ?', Fox_News_Model_Newslist::STATUS_ENABLE)
+             ->where('items_table.store_id = ?', Mage::app()->getStore()->getStoreId())
+             ->distinct();
         return $this;
     }
 }
