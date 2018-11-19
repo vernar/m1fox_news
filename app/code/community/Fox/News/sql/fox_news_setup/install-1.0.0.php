@@ -1,10 +1,10 @@
 <?php
-
+/* @var $installer Mage_Core_Model_Resource_Setup */
 $installer = $this;
 $installer->startSetup();
 
 $table = $installer->getConnection()
-    ->newTable($this->getTable('news/news'))
+    ->newTable($this->getTable('news/newslist'))
     ->addColumn('id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
         'identity' => true,
         'unsigned' => true,
@@ -20,7 +20,7 @@ $table = $installer->getConnection()
 $installer->getConnection()->createTable($table);
 
 $table = $installer->getConnection()
-    ->newTable($this->getTable('news/news_items'))
+    ->newTable($this->getTable('news/fox_news_items'))
     ->addColumn('id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
         'identity' => true,
         'unsigned' => true,
@@ -28,16 +28,24 @@ $table = $installer->getConnection()
         'primary' => true
     ))
     ->addColumn('news_item_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-        'nullable' => false
+        'nullable' => false,
+        'unsigned' => true
     ))
-    ->addColumn('store_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-        'nullable' => false
+
+    ->addColumn('store_id', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
+        'nullable' => false,
+        'unsigned'  => true,
     ))
-    ->addColumn('status', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+    ->addColumn('status', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
         'nullable' => false,
         'default' => '0'
-    ));
+    ))
+    ->addForeignKey($installer->getFkName('news/fox_news_items', 'news_item_id', 'news/newslist', 'id'),
+        'news_item_id', $installer->getTable('news/newslist'), 'id',
+        Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
+    ->addForeignKey($installer->getFkName('news/fox_news_items', 'store_id', 'core/store', 'store_id'),
+        'store_id', $installer->getTable('core/store'), 'store_id',
+        Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE);
+//TODO check script - addForeignKey
 $installer->getConnection()->createTable($table);
-
-
 $installer->endSetup();

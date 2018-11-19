@@ -47,12 +47,12 @@
             <children>
                 <foxnewsview translate="title" module="news">
                     <title>Add item</title>
-                    <action>adminhtml/foxnews_foxnewsview/add</action>
+                    <action>adminhtml/foxnews/new</action>
                     <sort_order>10</sort_order>
                 </foxnewsview>
                 <foxnewslist translate="title" module="news">>
                     <title>News list</title>
-                    <action>adminhtml/foxnews_foxnewslist</action>
+                    <action>adminhtml/foxnews/list</action>
                     <sort_order>20</sort_order>
                 </foxnewslist>
                 <foxnewssettings translate="title" module="news">

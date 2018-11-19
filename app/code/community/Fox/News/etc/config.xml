@@ -44,6 +44,24 @@
              </adminhtml>
         </routers>
     </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <foxnews>
+                    <file>fox_news.xml</file>
+                </foxnews>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <AW_Helpdesk3>
+                    <files>
+                        <default>AW_Helpdesk3.csv</default>
+                    </files>
+                </AW_Helpdesk3>
+            </modules>
+        </translate>
+    </adminhtml>
     <global>
         <resources>
             <fox_news_setup>
@@ -70,12 +88,12 @@
             <news_resource>
                 <class>Fox_News_Model_Resource</class>
                 <entities>
-                    <news>
+                    <newslist>
                         <table>fox_news</table>
-                    </news>
-                    <news_items>
+                    </newslist>
+                    <newslist_items>
                         <table>fox_news_items</table>
-                    </news_items>
+                    </newslist_items>
                 </entities>
             </news_resource>
         </models>
