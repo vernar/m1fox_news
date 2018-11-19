@@ -1,0 +1,25 @@
+
+<?php
+/** @var Fox_News_Block_Customer_News */
+$collection = $this->getCollection();
+?>
+<div class="page-title">
+    <h1><?php echo $this->__('Site News') ?></h1>
+</div>
+<table class="foxnews">
+    <?php foreach ($collection as $item): ?>
+    <tr>
+        <td width="20" align="center">*</td>
+        <td width="50" align="center"><?php echo $this->getFormatDate($item->getDate()); ?></td>
+        <td width="500"><?php echo $item->getTitle(); ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
+<div class="buttons-set">
+    <p class="back-link" >
+        <a href="<?php echo $this->getBackUrl() ?>">
+            <small>&laquo; </small>  <?php echo $this->__('Back') ?>
+        </a>
+    </p>
+</div>

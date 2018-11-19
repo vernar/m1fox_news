@@ -62,8 +62,8 @@ class Fox_News_Block_Adminhtml_Foxnews_Edit_Form extends Mage_Adminhtml_Block_Wi
             'required'  => false,
             'value'     => $model->getStatus(),
             'options'   => array(
-                0 => Mage::helper('news')->__('Disabled'),
-                1 => Mage::helper('news')->__('Enabled')
+                Fox_News_Model_Newslist::STATUS_DISABLE => Mage::helper('news')->__('Disabled'),
+                Fox_News_Model_Newslist::STATUS_ENABLE => Mage::helper('news')->__('Enabled')
             ),
         ));
 

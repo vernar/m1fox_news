@@ -26,12 +26,11 @@
         </translate>
         <layout>
             <updates>
-                <Fox>
+                <fox_news module="Fox_News">
                     <file>fox_news.xml</file>
-                </Fox>
+                </fox_news>
             </updates>
         </layout>
-
     </frontend>
     <admin>
         <routers>
@@ -54,11 +53,11 @@
         </layout>
         <translate>
             <modules>
-                <AW_Helpdesk3>
+                <Fox_News>
                     <files>
-                        <default>AW_Helpdesk3.csv</default>
+                        <default>Fox_News.csv</default>
                     </files>
-                </AW_Helpdesk3>
+                </Fox_News>
             </modules>
         </translate>
     </adminhtml>
@@ -102,7 +101,6 @@
                 <class>Fox_News_Block</class>
             </news>
         </blocks>
-
         <helpers>
             <news>
                 <class>Fox_News_Helper</class>
