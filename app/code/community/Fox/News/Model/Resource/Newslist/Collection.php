@@ -57,7 +57,7 @@ class Fox_News_Model_Resource_Newslist_Collection extends Mage_Core_Model_Resour
                 'main_table.id = items_table.news_item_id',
                 array())
              ->where('items_table.status = ?', Fox_News_Model_Newslist::STATUS_ENABLE)
-             ->where('items_table.store_id = ?', Mage::app()->getStore()->getStoreId())
+             ->where('items_table.store_id = ?  OR items_table.store_id = 0', Mage::app()->getStore()->getStoreId())
              ->distinct();
         return $this;
     }
