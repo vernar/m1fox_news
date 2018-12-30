@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <foxgeneral>
+                                        <title>Fox News</title>
+                                    </foxgeneral>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <foxnews translate="title" module="news">
+                        <title>Site News</title>
+                        <children>
+                            <foxnewsview translate="title" module="news">
+                                <title>Add item</title>
+                                <sort_order>10</sort_order>
+                            </foxnewsview>
+                            <foxnewslist translate="title" module="news">>
+                                <title>News list</title>
+                                <sort_order>20</sort_order>
+                            </foxnewslist>
+                            <foxnewssettings translate="title" module="news">
+                                <title>Settings</title>
+                                <sort_order>30</sort_order>
+                            </foxnewssettings>
+                        </children>
+                    </foxnews>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+    <menu>
+        <foxnews translate="title" module="news">
+            <depends>
+                <module>Fox_News</module>
+            </depends>
+            <title>Site News</title>
+            <sort_order>81</sort_order>
+            <children>
+                <foxnewsview translate="title" module="news">
+                    <title>Add item</title>
+                    <action>adminhtml/foxnews/new</action>
+                    <sort_order>10</sort_order>
+                </foxnewsview>
+                <foxnewslist translate="title" module="news">>
+                    <title>News list</title>
+                    <action>adminhtml/foxnews/list</action>
+                    <sort_order>20</sort_order>
+                </foxnewslist>
+                <foxnewssettings translate="title" module="news">
+                    <title>Settings</title>
+                    <action>adminhtml/system_config/edit/section/foxgeneral</action>
+                    <sort_order>30</sort_order>
+                </foxnewssettings>
+            </children>
+        </foxnews>
+    </menu>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<layout>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="news" ifconfig="foxgeneral/general/news_enabled">
+                <name>fox_news</name>
+                <path>news/customer/index</path>
+                <label>News</label>
+            </action>
+        </reference>
+    </customer_account>
+    <news_customer_index>
+        <update handle="customer_account" />
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>fox_news/css/customer.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="news/customer_news" name="fox_news.customer.container" template="fox_news/customer/news_container.phtml">
+            </block>
+        </reference>
+    </news_customer_index>
+</layout>
